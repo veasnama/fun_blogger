@@ -14,6 +14,7 @@ class User(models.Model):
         return self.username
 
 class Blog(models.Model):
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     owner = models.CharField(max_length=100)
     tilte = models.CharField(max_length=1000)

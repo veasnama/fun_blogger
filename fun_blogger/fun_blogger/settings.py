@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'system_healthcheck.apps.SystemHealthcheckConfig',
     'blogpost.apps.BlogpostConfig',
     'django.contrib.admin',
     'django.contrib.auth',

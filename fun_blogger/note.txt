@@ -1,0 +1,18 @@
+
+# port access port
+
+# configure LACP ethernet channel on 
+# Allow swtich access mode  ( Trunk mode)
+# Group port ethernet channel 
+
+# first we separate it from port channel into active mode
+
+# we bound port on the server and attach interface into bond port
+
+# we set it back into group port ethernenl channel
+
+# switchport access vlan 102
+
+# bonding it first then enable trunk port and port ethernenl channel
+
+# put it back into port channel 

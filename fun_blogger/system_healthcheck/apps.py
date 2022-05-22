@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 
 
-class BlogpostConfig(AppConfig):
+class SystemHealthcheckConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'blogpost'
-
+    name = 'system_healthcheck'
