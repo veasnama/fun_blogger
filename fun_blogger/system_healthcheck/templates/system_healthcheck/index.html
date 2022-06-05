@@ -1,16 +1,40 @@
-{% extends 'system_healthcheck/base.html' %}
-{% block content %}
-<div class="container">
+<!DOCTYPE html>
 
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+        <link rel="shortcut icon"  href="{% static 'system_healthcheck/images/heart_check.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'system_healthcheck/style.css' %}">
+        <title>System health </title>
+        <script type="text/javascript" src="{% static 'system_healthcheck/scripts/index.js'%}"></script>
+    </head>
+    <body style="margin: 10px;">
+        <div class="grid">
+            <header sytle="width: 100vw">
+                <div class="header-container">
+                    <img class="item1 item" width="32" height="32" src="{% static  'system_healthcheck/images/power-off.png'%} " alt="">
+                    <h2 class="item1 item" >Oracle Health Check</h2>
+                    <img  class="item1 item" width="32" height="32" src="{% static 'system_healthcheck/images/user.png' %}">
+                </div>
+            </header>
 
-<button type="button" class="btn btn-link">Link</button>
-</div>
-{% endblock %}
+            <nav>
+                Navbar
+            </nav>
+
+            <main>
+
+                {% include 'system_healthcheck/dropbox.html' %} 
+
+            </main>
+
+        </div>
+
+    </body>
+
+</html>
+
+
+

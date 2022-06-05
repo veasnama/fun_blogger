@@ -8,7 +8,9 @@ def index(request):
     # user = User.objects.all()
     user = "hello, world"    
     template = loader.get_template('system_healthcheck/index.html')
-    return HttpResponse(template.render({'user': user}, request))
+    context = {'user': user}
+    return HttpResponse(template.render(context, request));
+
 def report(request):
     return HttpResponse("This is report views")
 
