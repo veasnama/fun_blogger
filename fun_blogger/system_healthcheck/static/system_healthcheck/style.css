@@ -1,52 +1,57 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
+
 .grid {
-    display: grid;
-    grid-template-columns: 10% 90%;
-    grid-template-rows: 20vh 78vh;
-    grid-gap: 1em;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 20vh 78vh;
+  grid-gap: 1em;
 }
 .grid > * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header,
 footer,
 nav,
 main,
-article{
-    background: lightgray;
-    padding: 1em;
+article {
+  background: #e5edf1;
+  padding: 1em;
 }
 header h2 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .header-container {
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 .item {
-    margin: 2em;
-    justify-content: center;
+  margin: 2em;
+  justify-content: center;
 }
-header, footer {
-    grid-column: 1 / 4;
+header,
+footer {
+  grid-column: 1 / 4;
 }
 
 article {
-    min-width: 20em;
+  min-width: 20em;
 }
 
 .box {
-    background: lightgreen;
+  font-size: 1.25rem;
+  background-color: #c8dadf;
+  position: relative;
+  padding: 100px 20px;
 }
 .box__dragndrop,
 .box__uploading,
@@ -54,65 +59,70 @@ article {
 .box__error {
   display: none;
 }
-/* Drag and Drop files */
-.file-droppable {
-  background: #d9d5ec;
-  border: dashed 2px #5b537d;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: all 1s;
-  min-height: 70px;
-  position: relative;
+.box.has-advanced-upload {
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
 }
 
-.file-droppable.filled {
-  background: #c5dfdc;
-  border: solid 2px #6faca5;
-  border-radius: 5px;
-}
-
-.file-droppable:after {
-  position: absolute;
-  left: 13px;
-  top: 38px;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.file-droppable::before {
-  content: " ";
-  display: inline-block;
-  height: 100%;
-  width: 1%;
-  vertical-align: middle;
-}
-
-.file-droppable div {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 10px;
-  overflow: hidden;
-  word-break: break-all;
-}
-
-.file-droppable span {
-  position: absolute;
-  font-weight: bold;
-  right: 5px;
-  top: -5px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-  display: none;
-}
-
-.file-droppable input {
-  position: absolute;
-  z-index: 3;
-  display: block;
-  opacity: 0;
+.box__icon {
   width: 100%;
-  height: 100%;
-  top: 0;
+  height: 80px;
+  fill: #92b0b3;
+  display: block;
+  margin-bottom: 40px;
 }
-/* end of drag and drop file */
+
+.box.has-advanced-upload .box__dragndrop {
+  display: inline;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+  margin: 0 auto;
+}
+.box__file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.box__file + label {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.box.is-dragover {
+  background-color: grey;
+}
+.box__button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #e5edf1;
+  background-color: #39bfd3;
+  display: block;
+  padding: 8px 16px;
+  margin: 40px auto 0;
+}
+.box__button:hover {
+  background-color: #0f3c4b;
+}
+.box__file + label:hover strong {
+  color: #39bfd3;
+}
+.box.is-uploading .box__input {
+  visibility: none;
+}
+.box.is-uploading .box__uploading {
+  display: block;
+}
