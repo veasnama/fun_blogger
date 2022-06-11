@@ -9,14 +9,14 @@
         <link rel="stylesheet" type="text/css" href="{% static 'system_healthcheck/style.css' %}">
         <title>System health </title>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript" src="{% static 'system_healthcheck/scripts/index.js'%}"></script>
+        <script type="module" src="{% static 'system_healthcheck/scripts/index.js'%}"></script>
     </head>
     <body style="margin: 10px;">
         <div class="grid">
             <header sytle="width: 100vw">
                 <div class="header-container">
                     <img class="item1 item" width="128" height="128" src="{% static  'system_healthcheck/images/deam_logo.png'%} " alt="">
-                    <h2 class="item1 item" >Oracle Health Check</h2>
+                    <!-- <h2 class="item1 item" >Oracle Health Check</h2> -->
                     <div>
                             
                     <img  class="item1 item" width="32" height="32" src="{% static 'system_healthcheck/images/power-off.png' %}">

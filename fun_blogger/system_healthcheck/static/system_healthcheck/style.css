@@ -119,10 +119,3 @@ article {
 }
 .box__file + label:hover strong {
   color: #39bfd3;
-}
-.box.is-uploading .box__input {
-  visibility: none;
-}
-.box.is-uploading .box__uploading {
-  display: block;
-}
